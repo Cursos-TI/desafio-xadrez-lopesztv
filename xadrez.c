@@ -38,6 +38,21 @@ int main(){
         contadorRainha++;
     } while (contadorRainha <= movRainha);
 
+    printf("\n");
+
+    printf("==========MOVIMENTO CAVALO==========\n");
+
+ int movCompleto = 1; //controlar movimento em L
+
+   while (movCompleto--)
+   {
+        for (int i = 0; i < 2; i++)
+        {
+         printf("Passo 1: Cima\n");// Mostre "Cima" Duas vezes
+        }
+        printf("Passo 2: Direita\n"); // Mostre "Direita"
+        
+   }
    
     
 
