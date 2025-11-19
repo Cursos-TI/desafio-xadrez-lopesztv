@@ -1,66 +1,80 @@
 #include <stdio.h>
-int main(){
-    int movBispo = 5;    // Bispo anda 5 casas
-    int movTorre = 5;    // Torre anda 5 casas
-    int movRainha = 8;   // Rainha anda 8 casas
 
- 
-    // MOVIMENTO DO BISPO (FOR)
-     
-    printf("=== Movimento do Bispo ===\n");
-
-    // Bispo na diagonal: Cima + Direita
-    for (int i = 1; i <= movBispo; i++) {
-        printf("Passo %d: Cima + Direita\n", i);
+void movTorre(int casas){
+    if (casas > 0){
+    printf("Passos: Direita\n");
+    movTorre(casas -1);
     }
-    printf("\n");
+    
+}
 
- 
- // MOVIMENTO DA TORRE (WHILE)
- 
-    printf("=== Movimento da Torre ===\n");
-
-    int contadorTorre = 1;
-    while (contadorTorre <= movTorre) {
-        printf("Passo %d: Direita\n", contadorTorre);
-        contadorTorre++;
+void movBispo(int casas){
+    if (casas > 0){
+    printf("Passos: Cima, Direita\n");
+    movBispo(casas -1);
     }
-    printf("\n");
+    
+}
 
-    // ----------------------------------------------------
-    // MOVIMENTO DA RAINHA (DO-WHILE)
-    // ----------------------------------------------------
-    printf("=== Movimento da Rainha ===\n");
+void movRainha(int casas){
+    if (casas > 0){
+    printf("Passos: Esquerda\n");
+    movRainha(casas -1);
+    }
+    
+}
 
-    int contadorRainha = 1;
-    do {
-        printf("Passo %d: Esquerda\n", contadorRainha);
-        contadorRainha++;
-    } while (contadorRainha <= movRainha);
-
-    printf("\n");
-
+void movCavalo() {
     printf("==========MOVIMENTO CAVALO==========\n");
 
- int movCompleto = 1; //controlar movimento em L
+    int movCompleto = 1; //controlar movimento em L
 
-   while (movCompleto--)
-   {
-        for (int i = 0; i < 2; i++)
-        {
-         printf("Passo 1: Cima\n");// Mostre "Cima" Duas vezes
+    while (movCompleto--) {
+        for (int i = 0; i < 2; i++) {
+            printf("Passo: Cima\n");
         }
-        printf("Passo 2: Direita\n"); // Mostre "Direita"
-        
-   }
+        printf("Passo: Direita\n");
+    }
+}
+
+
+int main(){
+
+    int torre;
+    int bispo;
+    int rainha;
+
+    printf("Seja muito bem vindo ao seu tabuleiro inteligente!!! \n");
+
+    printf("Quantas casas foram pedidas para sua TORRE se mover? \n");
+    scanf("%d", &torre);
+    printf("==========MOVIMENTO TORRE==========\n");
+    movTorre(5);
+    printf("Agora você esta na posição correta *-* \n");
    
-    
+    printf("Quantas casas foram pedidas para seu BISPO se mover? \n");
+    scanf("%d", &bispo);
+    printf("==========MOVIMENTO BISPO==========\n");
+    movBispo(5);
+    printf("Agora você esta na posição correta *-* \n");
+   
+    printf("Quantas casas foram pedidas para sua RAINHA se mover? \n");
+    scanf("%d", &rainha);
+    printf("==========MOVIMENTO RAINHA==========\n");
+    movRainha(8);
+    printf("Agora você esta na posição correta *-* \n");
+ 
+    int cavalo;
 
+printf("Quantos movimentos completos o CAVALO deve fazer? \n");
+scanf("%d", &cavalo);
 
+for (int i = 0; i < cavalo; i++){
+    movCavalo();
+}
 
-
-
-
+printf("Agora você esta na posição correta *-* \n");
+printf("Foi um prazer te ajudar.Sempre que precisar, estou aqui.");
 
 
     return 0;
