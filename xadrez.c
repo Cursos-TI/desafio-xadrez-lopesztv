@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Movimento torre usando RECURSIVIDADE
 void movTorre(int casas){
     if (casas > 0){
     printf("Passos: Direita\n");
@@ -8,6 +9,7 @@ void movTorre(int casas){
     
 }
 
+//Movimento  bispo usando RECURSIVIDADE
 void movBispo(int casas){
     if (casas > 0){
     printf("Passos: Cima, Direita\n");
@@ -16,6 +18,7 @@ void movBispo(int casas){
     
 }
 
+//Movimento rainha usando RECURSIVIDADE
 void movRainha(int casas){
     if (casas > 0){
     printf("Passos: Esquerda\n");
@@ -24,6 +27,7 @@ void movRainha(int casas){
     
 }
 
+//integrando codigo em WHILE do Cavalo
 void movCavalo() {
     printf("==========MOVIMENTO CAVALO==========\n");
 
@@ -44,7 +48,7 @@ int main(){
     int bispo;
     int rainha;
 
-    printf("Seja muito bem vindo ao seu tabuleiro inteligente!!! \n");
+    printf("Seja muito bem vindo ao seu tabuleiro inteligente!!! \n"); //INTERAÇÃO INICIAL
 
     printf("Quantas casas foram pedidas para sua TORRE se mover? \n");
     scanf("%d", &torre);
@@ -63,6 +67,8 @@ int main(){
     printf("==========MOVIMENTO RAINHA==========\n");
     movRainha(8);
     printf("Agora você esta na posição correta *-* \n");
+
+    //INTEGRAÇÃO CODIGO CAVALO NO MAIN
  
     int cavalo;
 
@@ -74,7 +80,7 @@ for (int i = 0; i < cavalo; i++){
 }
 
 printf("Agora você esta na posição correta *-* \n");
-printf("Foi um prazer te ajudar.Sempre que precisar, estou aqui.");
+printf("Foi um prazer te ajudar.Sempre que precisar, estou aqui.");// INTERAÇÃO FINAL
 
 
     return 0;
